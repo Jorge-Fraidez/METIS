@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { AuthContext } from '../context/AuthContext'
 import { useContext, useState } from "react";
-import { createActor } from "../declarations/backend";
-
 type ResumenReporte = {
   id: bigint;
   status: string;
@@ -18,29 +16,6 @@ function Historial() {
 
   const { isAuth, identity } = useContext(AuthContext);
   const [reportes, setReportes] = useState<ResumenReporte[]>([]);
-
-  let canisterId: any = "be2us-64aaa-aaaaa-qaabq-cai";
-  let backend = createActor(canisterId, {
-    agentOptions: {
-      host: "http://localhost:4943",
-      identity,
-    },
-  });
-
-  useEffect(() => {
-    init();
-  }, []);
-
-  async function init() {
-    if (isAuth) {
-      try {
-        let response: ResumenReporte[] = await backend.getAllDenuncias();
-        setReportes(response);
-      } catch (e) {
-        console.error(e);
-      }
-    }
-  }
 
 
   return (

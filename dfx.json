@@ -15,7 +15,6 @@
         "react-dashboard": {
             "type": "assets",
             "dependencies": [
-                "backend",
                 "internet_identity"
             ],
             "source": [

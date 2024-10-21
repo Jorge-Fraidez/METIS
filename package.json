@@ -6,16 +6,12 @@
     "npm": ">=7.0.0"
   },
   "workspaces": [
-    "src/react-dashboard",
-    "src/internet_identity_middleware",
-    "src/tunnel"
+    "src/react-dashboard"
   ],
   "keywords": [
     "dfinity",
-    "motoko",
     "rust",
     "react",
-    "react-native",
     "internet identity",
     "internet computer"
   ],

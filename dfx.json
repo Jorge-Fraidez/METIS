@@ -12,14 +12,6 @@
             "type": "custom",
             "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
         },
-        "backend": {
-            "type": "motoko",
-            "main": "src/backend/main.mo",
-            "declarations": {
-                "node_compatibility": false,
-                "output": "src/declarations/backend"
-            }
-        },
         "react-dashboard": {
             "type": "assets",
             "dependencies": [
@@ -30,18 +22,6 @@
                 "src/react-dashboard/dist"
             ],
             "workspace": "src/react-dashboard"
-        },
-        "internet_identity_middleware": {
-            "type": "assets",
-            "source": [
-                "src/internet_identity_middleware/build"
-            ],
-            "dependencies": [
-                "internet_identity"
-            ],
-            "frontend": {
-                "entrypoint": "src/internet_identity_middleware/build/index.html"
-            }
         },
         "network": {
             "candid": "src/network/network.did",
@@ -68,15 +48,6 @@
             "declarations": {
                 "node_compatibility": false,
                 "output": "src/declarations/vectordb"
-            }
-        },
-        "qrcode": {
-            "candid": "src/qrcode/qrcode.did",
-            "package": "qrcode",
-            "type": "rust",
-            "declarations": {
-                "node_compatibility": false,
-                "output": "src/declarations/qrcode"
             }
         }
     },
